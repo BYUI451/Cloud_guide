@@ -52,4 +52,4 @@ Then for the image source, you may select Azure Container Registry. Now you shou
 ![](Azure2.PNG)
 
 ## Helpful Links
-This guide is intended to be written as an extension of and explanation og this [Guide for pushing a generic container](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli)
+This guide is intended to be written as an extension of and explanation of this [Guide for pushing a generic container](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli)
