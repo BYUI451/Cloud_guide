@@ -15,13 +15,13 @@ docker login myregistry.azurecr.io
 You will then be prompted to login with the credentials you setup in the container registry. Now that we are logged in to our container registry we can pull a docker image to our local machine. For now, we can use an example container from Microsoft.
 
 ```sh
-docker pull mcr.microsoft.com/oss/nginx/nginx:1.15.5-alpine
+docker pull rocker/rstudio
 ```
 
 Once you have pulled the image it is time to run the container locally. This can be done in one of two ways. In Docker Desktop you may select the image to run as a container or you can run a new container from the command line. This can be done as follows:
 
 ```sh
-docker run -it --rm -p 8080:80 mcr.microsoft.com/oss/nginx/nginx:1.15.5-alpine
+docker run -e PASSWORD=12345  -it --rm -p 8080:80 rocker/rstudio
 ```
 You should be able to access the running container from [http://localhost:8080](http://localhost:8080)
 
