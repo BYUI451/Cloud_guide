@@ -41,13 +41,13 @@ az acr login --name <acrName>
 Pull a container to your  local machine. 
 For now, we can use an example container `rocker/rstudio`.
 
-```sh
+```Docker
 docker pull rocker/rstudio
 ```
 
 Once you have pulled the image it is time to run the container locally. This can be done in one of two ways. In Docker Desktop you may select the image to run as a container or you can run a new container from the command line.
 
-```sh
+```Docker
 docker run -e PASSWORD=12345 -p 8787:8787 rocker/rstudio
 ```
 
@@ -56,18 +56,18 @@ You should be able to access the running container from [http://localhost:8787](
 Once the container is running locally you can move on to running the container as a web application hosted on Azure. 
 
 1. Login to the Azure Container Registery created earlier 
-```sh
+```Docker
 docker login <acrName>.azurecr.io
 ```
 You will  be prompted to login with the credentials you setup in the container registry. 
 
 2. It is important to rename the container according to the container registry we wish to push to. This allows us to have a smooth transition as we move the container to a remote host.
-```sh
+```Docker
 docker tag rocker/rstudio <acrName>.azurecr.io/rocker/rstudio
 ```
 
 After renaming the container to match the registry you may simply push your image to container registry as follows:
-```sh
+```Docker
 docker push <acrName>.azurecr.io/rocker/rstudio
 ```
 Your container should now be visible within your container registry. 
@@ -90,3 +90,4 @@ Then for the image source, you may select Azure Container Registry. Now you shou
 This guide is intended to be written as an extension of and explanation of this [Guide for pushing a generic container](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli)
 
 [Data Science and Azure](https://towardsdatascience.com/running-jupyter-notebook-on-the-cloud-in-15-mins-azure-79b7797e4ef6)
+[Tutorial: Deploy a multi-container group using Docker Compose](https://docs.microsoft.com/en-us/azure/container-instances/tutorial-docker-compose)
