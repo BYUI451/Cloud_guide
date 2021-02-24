@@ -25,7 +25,7 @@ Once you have pulled the image it is time to run the container locally. This can
 ```sh
 docker run -e PASSWORD=12345 -p 8787:8787 rocker/rstudio
 ```
-You should be able to access the running container from [http://localhost:8787](http://localhost:8787)
+You should be able to access the running container from [http://localhost:8787](http://localhost:8787) and login with the username 'rstudio' and pasword '12345'
 
 Now that we have the container running locally we can move on to running the container as a web application hosted on Azure. It is important to rename the container according to the container registry we wish to push to. This allows us to have a smooth transition as we move the container to a remote host.
 
