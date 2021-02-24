@@ -37,7 +37,7 @@ After renaming the container to match the registry you may simply push your imag
 ```sh
 docker push myregistry.azurecr.io/samples/nginx
 ```
-Your container should now be visible witthin your container registry. 
+Your container should now be visible within your container registry. 
 
 ## Accessing your Container
 
