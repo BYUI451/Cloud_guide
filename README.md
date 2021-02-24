@@ -2,7 +2,7 @@
 
 ## Moving a local docker Container to Azure
 
-Prerequisites: 
+### Prerequisites: 
 1. [Azure Account](https://azure.microsoft.com/en-us/free/)
     * [Free Student Credits with Azure](https://azure.microsoft.com/en-us/free/students/)
 2. [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
@@ -10,15 +10,39 @@ Prerequisites:
     2. Sign in with your account credentials in the browser
 4. [Docker Desktop](https://www.docker.com/products/docker-desktop)
 
-
+### Purpose
 The purpose of this guide is to help you pull a generic Docker image, run it on your personal machine, and then access the container remotely after pushing to Azure. You will need to have Docker installed on your local machine and an azure account.
 
- The first step is to create an Azure container registry. You will want to enable admin privleges, setup a username and make sure you have access to you password in the access key tab.
+### Create Azure container registry
+The first step is to create an Azure container registry. You will then want to enable admin privleges, setup a username and make sure you have access to you password in the access key tab.
+
+1. Create a resource group
+      * `myResourceGroup` should be replaced with the name of your rescource group name
+```Azure CLI
+az group create --name myResourceGroup --location eastus
+```
+
+2. Create container registry with [az acr create](https://docs.microsoft.com/en-us/cli/azure/acr#az-acr-create)
+      * `<acrName>` should be replaced with a unique name containing 5-50 alphanumeric characters
+```Azure CLI
+az acr create --resource-group myResourceGroup --name <acrName> --sku Basic
+```
+
+3. Log in to container registery
+```Azure CLI
+az acr login --name <acrName>
+```
+      *`<acrName>` is the same name used in previous step
+      
+**NOTE: After completing step 3, you with need to change the context in which you are running the command prompt or terminal**
+      
+### 
+
 
 After doing this you can run the following in your command prompt replacing 'myregistry' with the name of your container registry.
 
 ```sh
-docker login myregistry.azurecr.io
+docker login <acrName>.azurecr.io
 ```
 
 You will then be prompted to login with the credentials you setup in the container registry. Now that we are logged in to our container registry we can pull a docker image to our local machine. For now, we can use an example container from Microsoft.
@@ -37,12 +61,12 @@ You should be able to access the running container from [http://localhost:8787](
 Now that we have the container running locally we can move on to running the container as a web application hosted on Azure. It is important to rename the container according to the container registry we wish to push to. This allows us to have a smooth transition as we move the container to a remote host.
 
 ```sh
-docker tag rocker/rstudio myregistry.azurecr.io/rocker/rstudio
+docker tag rocker/rstudio <acrName>.azurecr.io/rocker/rstudio
 ```
 
 After renaming the container to match the registry you may simply push your image to container registry as follows:
 ```sh
-docker push myregistry.azurecr.io/rocker/rstudio
+docker push <acrName>.azurecr.io/rocker/rstudio
 ```
 Your container should now be visible within your container registry. 
 
