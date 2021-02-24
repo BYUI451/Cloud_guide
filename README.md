@@ -79,13 +79,19 @@ Navigating to your [Azure portal](https://portal.azure.com/#home) you will now c
 
 ![](Azure.PNG)
 
-We want to select a web application but for the pubblish options select Docker Container.
+We want to select a web application but for the publish options select Docker Container.
 
-![](Azure1.PNG)
+![](azure_app_setup.png)
 
-Then for the image source, you may select Azure Container Registry. Now you should be able to select the registry and image that were pushed earlier. The final step is to create the app. Once your app is created, you should be provided with a link to access your Docker Container which is now hosted on Azure.
+Then for the image source, you may select Azure Container Registry. Now you should be able to select the registry and image that were pushed earlier. 
+
+![](azure_app_setup2.png)
+
+Once your app is created, you should be provided with a link to access your Docker Container which is now hosted on Azure.
 
 ![](Azure4.PNG)
+
+You may need to adjust your app service plan depending on the container. This is found in the settings bar of the app you created. Likely you could just use the 'Scale up(App Service plan)' link to make needed changes. 
 
 ## Helpful Links
 This guide is intended to be written as an extension of and explanation of this [Guide for pushing a generic container](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli)
