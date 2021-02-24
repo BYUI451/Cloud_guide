@@ -32,34 +32,36 @@ az acr create --resource-group myResourceGroup --name <acrName> --sku Basic
 ```Azure CLI
 az acr login --name <acrName>
 ```
-      *`<acrName>` is the same name used in previous step
+`<acrName>` is the same name used in previous step
       
 **NOTE: After completing step 3, you with need to change the context in which you are running the command prompt or terminal**
       
-### 
+### Docker on local machine
 
-
-After doing this you can run the following in your command prompt replacing 'myregistry' with the name of your container registry.
-
-```sh
-docker login <acrName>.azurecr.io
-```
-
-You will then be prompted to login with the credentials you setup in the container registry. Now that we are logged in to our container registry we can pull a docker image to our local machine. For now, we can use an example container from Microsoft.
+Pull a container to your  local machine. 
+For now, we can use an example container `rocker/rstudio`.
 
 ```sh
 docker pull rocker/rstudio
 ```
 
-Once you have pulled the image it is time to run the container locally. This can be done in one of two ways. In Docker Desktop you may select the image to run as a container or you can run a new container from the command line. This can be done as follows:
+Once you have pulled the image it is time to run the container locally. This can be done in one of two ways. In Docker Desktop you may select the image to run as a container or you can run a new container from the command line.
 
 ```sh
 docker run -e PASSWORD=12345 -p 8787:8787 rocker/rstudio
 ```
+
 You should be able to access the running container from [http://localhost:8787](http://localhost:8787) and login with the username 'rstudio' and pasword '12345'
 
-Now that we have the container running locally we can move on to running the container as a web application hosted on Azure. It is important to rename the container according to the container registry we wish to push to. This allows us to have a smooth transition as we move the container to a remote host.
+Once the container is running locally you can move on to running the container as a web application hosted on Azure. 
 
+1. Login to the Azure Container Registery created earlier 
+```sh
+docker login <acrName>.azurecr.io
+```
+You will  be prompted to login with the credentials you setup in the container registry. 
+
+2. It is important to rename the container according to the container registry we wish to push to. This allows us to have a smooth transition as we move the container to a remote host.
 ```sh
 docker tag rocker/rstudio <acrName>.azurecr.io/rocker/rstudio
 ```
