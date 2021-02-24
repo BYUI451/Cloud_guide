@@ -75,7 +75,7 @@ Your container should now be visible within your container registry.
 
 ## Accessing your Container
 
-Navigating to your [Azure portal](https://portal.azure.com/#home) you will now want to create a new resource.
+Navigating to your [Azure portal](https://portal.azure.com/#home) you will now create a new resource.
 
 ![](Azure.PNG)
 
