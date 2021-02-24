@@ -34,7 +34,6 @@ az acr login --name <acrName>
 ```
 `<acrName>` is the same name used in previous step
       
-**NOTE: After completing step 3, you with need to change the context in which you are running the command prompt or terminal**
       
 ### Docker on local machine
 
@@ -55,6 +54,8 @@ You should be able to access the running container from [http://localhost:8787](
 
 Once the container is running locally you can move on to running the container as a web application hosted on Azure. 
 
+### Pushing to Azure Container Registry
+
 1. Login to the Azure Container Registery created earlier 
 ```Docker
 docker login <acrName>.azurecr.io
@@ -74,7 +75,7 @@ Your container should now be visible within your container registry.
 
 ## Accessing your Container
 
-Navigating to your Azure portal you will now want to create a new resource.
+Navigating to your [Azure portal](https://portal.azure.com/#home) you will now want to create a new resource.
 
 ![](Azure.PNG)
 
