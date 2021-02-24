@@ -88,10 +88,17 @@ Then for the image source, you may select Azure Container Registry. Now you shou
 ![](azure_app_setup2.png)
 
 Once your app is created, you should be provided with a link to access your Docker Container which is now hosted on Azure.
+Or navigate `All resources` -> `<appName>(shown as a type 'App Service')` click `Start` and then `Browse`. This may take a while to load. 
 
 ![](Azure4.PNG)
 
-You may need to adjust your app service plan depending on the container. This is found in the settings bar of the app you created. Likely you could just use the 'Scale up(App Service plan)' link to make needed changes. 
+
+
+
+__NOTE:__ You may need to adjust your app service plan depending on the container. This is found in the settings bar of the app you created. Likely you could just use the `Scale up(App Service plan)` link to make needed changes. 
+
+
+
 
 ## Helpful Links
 This guide is intended to be written as an extension of and explanation of this [Guide for pushing a generic container](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli)
