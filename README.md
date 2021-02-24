@@ -53,3 +53,5 @@ Then for the image source, you may select Azure Container Registry. Now you shou
 
 ## Helpful Links
 This guide is intended to be written as an extension of and explanation of this [Guide for pushing a generic container](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli)
+
+[Data Science and Azure](https://towardsdatascience.com/running-jupyter-notebook-on-the-cloud-in-15-mins-azure-79b7797e4ef6)
