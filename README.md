@@ -2,9 +2,11 @@
 
 ## Moving a local docker Container to Azure
 
+Prerequisites: Azure Account, Docker Desktop, Azure ACI installed
+
 The purpose of this guide is to help you pull a generic Docker image, run it on your personal machine, and then access the container remotely after pushing to Azure. You will need to have Docker installed on your local machine and an azure account.
 
-The first step is to connecct docker on your local machine. Before doing this you should have created an Azure container registry. You will want to enable admin privleges, setup a username and make sure you have acess to you password in the access key tab.
+ The first step is to createAzure container registry. You will want to enable admin privleges, setup a username and make sure you have acess to you password in the access key tab.
 
 After doing this you can run the following in your command prompt replacing 'myregistry' with the name of your container registry.
 
