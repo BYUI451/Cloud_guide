@@ -23,7 +23,7 @@ docker pull rocker/rstudio
 Once you have pulled the image it is time to run the container locally. This can be done in one of two ways. In Docker Desktop you may select the image to run as a container or you can run a new container from the command line. This can be done as follows:
 
 ```sh
-docker run -e PASSWORD=12345  -it --rm -p 8787:80 rocker/rstudio
+docker run -e PASSWORD=12345 -p 8787:8787 rocker/rstudio
 ```
 You should be able to access the running container from [http://localhost:8080](http://localhost:8787)
 
