@@ -3,10 +3,12 @@
 ## Moving a local docker Container to Azure
 
 Prerequisites: 
-[Azure Account](https://azure.microsoft.com/en-us/free/)
- -[Free Student Credits with Azure](https://azure.microsoft.com/en-us/free/students/)
-[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
-[Docker Desktop](https://www.docker.com/products/docker-desktop)
+1. [Azure Account](https://azure.microsoft.com/en-us/free/)
+    * [Free Student Credits with Azure](https://azure.microsoft.com/en-us/free/students/)
+2. [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
+    1. Run the `login` command in the command prompt or terminal: `az login`
+    2. Sign in with your account credentials in the browser
+4. [Docker Desktop](https://www.docker.com/products/docker-desktop)
 
 
 The purpose of this guide is to help you pull a generic Docker image, run it on your personal machine, and then access the container remotely after pushing to Azure. You will need to have Docker installed on your local machine and an azure account.
