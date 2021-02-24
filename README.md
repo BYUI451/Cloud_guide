@@ -51,7 +51,7 @@ We want to select a web application but for the pubblish options select Docker C
 
 Then for the image source, you may select Azure Container Registry. Now you should be able to select the registry and image that were pushed earlier. The final step is to create the app. Once your app is created, you should be provided with a link to access your Docker Container which is now hosted on Azure.
 
-![](Azure2.PNG)
+![](Azure4.PNG)
 
 ## Helpful Links
 This guide is intended to be written as an extension of and explanation of this [Guide for pushing a generic container](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli)
