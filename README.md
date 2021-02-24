@@ -35,7 +35,7 @@ docker tag rocker/rstudio myregistry.azurecr.io/rocker/rstudio
 
 After renaming the container to match the registry you may simply push your image to container registry as follows:
 ```sh
-docker push myregistry.azurecr.io/samples/nginx
+docker push myregistry.azurecr.io/rocker/rstudio
 ```
 Your container should now be visible within your container registry. 
 
