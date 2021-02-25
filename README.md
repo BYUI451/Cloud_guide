@@ -58,18 +58,18 @@ Once the container is running locally you can move on to running the container a
 
 1. Login to the Azure Container Registery created earlier 
 ```Docker
-docker login <acrName>.azurecr.io
+docker login <login server name>
 ```
 You will  be prompted to login with the credentials you setup in the container registry. 
 
 2. It is important to rename the container according to the container registry we wish to push to. This allows us to have a smooth transition as we move the container to a remote host.
 ```Docker
-docker tag rocker/rstudio <acrName>.azurecr.io/rocker/rstudio
+docker tag rocker/rstudio <login server name>/rocker/rstudio
 ```
 
 After renaming the container to match the registry you may simply push your image to container registry as follows:
 ```Docker
-docker push <acrName>.azurecr.io/rocker/rstudio
+docker push <login server name>/rocker/rstudio
 ```
 Your container should now be visible within your container registry. 
 
